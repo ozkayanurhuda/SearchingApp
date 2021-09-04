@@ -79,7 +79,7 @@
             android:id="@+id/tvReleaseDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{itemObject.releaseDate}"
+            android:text="@{itemObject.releaseDate.format(Readable, itemObject)}"
             android:layout_marginTop="30dp"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
