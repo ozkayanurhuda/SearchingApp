@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_activity_nav"
+    app:startDestination="@id/searchScreenFragment">
+
+    <fragment
+        android:id="@+id/searchScreenFragment"
+        android:name="com.nurozkaya.searchingapp.fragment.SearchScreenFragment"
+        android:label="SearchScreenFragment"
+        tools:layout="@layout/fragment_search_screen">
+        <action
+            android:id="@+id/action_searchScreenFragment_to_detailScreenFragment"
+            app:destination="@id/detailScreenFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/detailScreenFragment"
+        android:name="com.nurozkaya.searchingapp.fragment.DetailScreenFragment"
+        android:label="fragment_detail_screen"
+        tools:layout="@layout/fragment_detail_screen" >
+        <argument
+            android:name="objectSent"
+            app:argType="com.nurozkaya.searchingapp.entity.Items" />
+    </fragment>
+</navigation>

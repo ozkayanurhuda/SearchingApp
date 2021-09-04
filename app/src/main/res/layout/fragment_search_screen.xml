@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="searchScreenFragment"
+            type="com.nurozkaya.searchingapp.fragment.SearchScreenFragment" />
+
+        <variable
+            name="searchScreenToolbarTitle"
+            type="String" />
+        <variable
+            name="adapter"
+            type="com.nurozkaya.searchingapp.adapter.ItemsAdapter" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragment.SearchScreenFragment">
+
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarHome"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:title="@{searchScreenToolbarTitle}" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv"
+            android:layout_width="match_parent"
+            android:layout_height="550dp"
+            android:adapter="@{adapter}"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbarHome" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipMusic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Music"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/chipMovies"
+            app:layout_constraintTop_toBottomOf="@+id/toolbarHome" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipMovies"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Movies"
+            app:layout_constraintEnd_toStartOf="@+id/chipMusic"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/chipBooks"
+            app:layout_constraintTop_toBottomOf="@+id/toolbarHome" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipBooks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Books"
+            app:layout_constraintEnd_toStartOf="@+id/chipMovies"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/chipApps"
+            app:layout_constraintTop_toBottomOf="@+id/toolbarHome" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipApps"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Apps"
+            app:layout_constraintEnd_toStartOf="@+id/chipBooks"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbarHome" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
